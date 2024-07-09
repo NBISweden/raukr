@@ -1,0 +1,8 @@
+/.quarto/
+**/.DS_Store
+**/.Rhistory
+*.code-workspace
+**/.ipynb_checkpoints
+/.luarc.json
+**/*_cache/
+**/__pycache__
