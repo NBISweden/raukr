@@ -32,34 +32,13 @@ format:
     include-before-body: "assets/include_body_before.html"
     include_after_body: "assets/include_body_after.html"
     theme: "assets/css/styles.scss"
-    smooth-scroll: true
-    toc: true
-    toc-depth: 4
-    toc-location: right
-    number-sections: true
-    number-depth: 4
-    code-fold: false
-    code-tools: false
-    code-copy: true
-    code-overflow: wrap
-    df-print: paged
+    toc: false
     standalone: false
     fig-align: left
-    title-block-banner: "assets/images/banner.jpg"
-    subtitle: "RaukR {{< meta current_year >}} • Advanced R for Bioinformatics"
     callout-icon: true
     date:  last-modified
     date-format: "DD-MMM-YYYY"
-    image: "/assets/images/featured.jpg"
-    lightbox:
-      match: auto
-
-execute:
-  eval: true
-  echo: true
-  warning: false
-  message: false
-  freeze: auto
+    image: "/assets/images/visby-typing.webp"
 
 filters:
   - assets/custom.lua

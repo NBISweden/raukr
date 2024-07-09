@@ -5,18 +5,9 @@ subtitle: ""
 description: ""
 date: ""
 author: ""
-toc: false
-sidebar: false
 format:
   html:
     css: "assets/css/home.css"
-    number-sections: false
-    title-block-banner: false
-    page-layout: article
-    lightbox: false
-image: assets/images/visby-typing.webp
-execute:
-  freeze: false
 ---
 
 ::: {.hero .column-page}
