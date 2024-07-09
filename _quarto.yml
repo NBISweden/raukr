@@ -1,0 +1,67 @@
+project:
+  type: website
+  output-dir: docs
+  render: 
+    - "*.qmd"
+    - "*.md"
+
+website:
+  image: "assets/images/featured.jpg"
+  favicon: "assets/favicon.svg"
+  search: false
+  navbar:
+    logo: "assets/logos/raukr.png"
+    logo-alt: "RaukR"
+    right:
+      - text: "Home"
+        href: "index.html"
+      - text: "Workshops"
+        href: "index.html#workshops"
+      - text: About
+        href: "index.html#about"
+  page-footer:
+    border: false
+    left: "{{< meta current_year >}} NBIS | [GPL-3 License](https://choosealicense.com/licenses/gpl-3.0/)"
+    right: "Published with [Quarto](https://quarto.org/) v{{< meta quarto_version >}}"
+  site-url: "https://nbisweden.github.io/raukr/"
+
+format:
+  html:
+    quarto-required: ">=1.4.5"
+    include-in-header: "assets/include_head.html"
+    include-before-body: "assets/include_body_before.html"
+    include_after_body: "assets/include_body_after.html"
+    theme: "assets/css/styles.scss"
+    smooth-scroll: true
+    toc: true
+    toc-depth: 4
+    toc-location: right
+    number-sections: true
+    number-depth: 4
+    code-fold: false
+    code-tools: false
+    code-copy: true
+    code-overflow: wrap
+    df-print: paged
+    standalone: false
+    fig-align: left
+    title-block-banner: "assets/images/banner.jpg"
+    subtitle: "RaukR {{< meta current_year >}} • Advanced R for Bioinformatics"
+    callout-icon: true
+    date:  last-modified
+    date-format: "DD-MMM-YYYY"
+    image: "/assets/images/featured.jpg"
+    lightbox:
+      match: auto
+
+execute:
+  eval: true
+  echo: true
+  warning: false
+  message: false
+  freeze: auto
+
+filters:
+  - assets/custom.lua
+  - fontawesome
+  - accordion

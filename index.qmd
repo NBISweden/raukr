@@ -1,0 +1,96 @@
+---
+pagetitle: "RaukR • R Beyond The Basics"
+title: ""
+subtitle: ""
+description: ""
+date: ""
+author: ""
+toc: false
+sidebar: false
+format:
+  html:
+    css: "assets/css/home.css"
+    number-sections: false
+    title-block-banner: false
+    page-layout: article
+    lightbox: false
+image: assets/images/visby-typing.webp
+execute:
+  freeze: false
+---
+
+::: {.hero .column-page}
+
+![](assets/images/panorama.webp){.hero-image fig-alt="Hands coding at a laptop with the view of a medieval city"}
+
+::: {.hero-inner}
+
+::: {.hero-title-1}
+NBIS Summer School
+:::
+
+::: {.hero-title-2}
+RaukR • R Beyond The Basics
+:::
+
+::: {.hero-title-3}
+Master the R programming ecosystem on our annual  
+2 week summer school in Visby, Gotland, Sweden
+:::
+
+:::
+:::
+
+::: {.hero-image-small-screen}
+![](assets/images/visby-typing.webp)
+:::
+
+In Life Sciences and Bioinformatics, the R programming language is pivotal for data transformation, statistical analyses, and crafting publication-ready visualizations. This workshop goes beyond the basics, offering participants a comprehensive understanding of the R ecosystem. We explore best coding practices, code profiling, data wrangling, generating reports from notebooks and development of web apps using R.
+
+## Workshops
+
+::: {.callout-note}
+The next workshop is planned to run in June 2025. Registration opens in Jan-Feb 2025. 
+:::
+
+All course materials from our previous workshops are open and accessible.
+
+**[Raukr 2024](https://nbisweden.github.io/raukr-2024/)**
+
+::: {.image-container}
+
+![](assets/images/group-2024.webp){fig-alt="Group photo of teachers and participants with seastacks at Ljugarn"}
+
+::: {.overlay-text}
+[[Raukr 2024 &#9656;](https://nbisweden.github.io/raukr-2024/)]{.large}
+:::
+
+:::
+
+**[Raukr 2023](https://nbisweden.github.io/raukr-2023/)**
+
+::: {.image-container}
+
+![](assets/images/group-2023.webp){fig-alt="Group photo of teachers and participants with seastacks at Ljugarn"}
+
+::: {.overlay-text}
+[[Raukr 2023 &#9656;](https://nbisweden.github.io/raukr-2023/)]{.large}
+:::
+
+:::
+
+## About
+
+![](assets/images/visby-harbor.webp){fig-alt="An aerial view of a medieval harbor with fishing vessels"}
+
+RaukR summer school is run by the National Bioinformatics Infrastructure Sweden. [NBIS](https://nbis.se) is a platform of the Science for Life Laboratory ([SciLifeLab](https://www.scilifelab.se/)) and the Swedish node of [Elixir](https://elixir-europe.org/). This event is organised in co-operation with Campus Gotland, Uppsala University.
+
+For queries, write to us at **raukr[at]nbis.se**.  
+
+![](assets/logos/raukr.svg){height="1.2em" style="margin-bottom:-3px;"} &nbsp; ![](assets/logos/nbis-scilifelab.svg){height="1.1em"}
+
+---
+
+::: small
+Updated: {{< meta current_date >}} at {{< meta current_time >}}.
+:::
