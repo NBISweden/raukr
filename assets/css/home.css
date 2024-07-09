@@ -1,0 +1,157 @@
+/* css style for landing page */
+
+/* css style for landing page */
+
+body {
+  background-image: url("../images/home-1.webp");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+.navbar {
+  background-color: transparent !important;
+}
+
+.nav-footer {
+  background-color: transparent !important;
+}
+
+/* hero */
+
+.hero {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.hero p {
+  margin: 0;
+}
+
+.hero-inner {
+  color: #D1E5E6;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 2em;
+  text-shadow: 0 0 6px gray;
+}
+
+.hero .hero-title-1 {
+  font-size: 1.44rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.25em;
+} 
+
+.hero .hero-title-2 {
+  font-size: 2.074rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.hero .hero-title-3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.hero-image-small-screen {
+  display: none;
+}
+
+@media only screen and (max-width: 769px) {
+  .hero {
+    position: unset;
+  }
+
+  .hero-inner {
+    color: #1c2833;
+    position: unset;
+    padding: 0;
+    text-shadow: none;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+  }
+
+  .hero-image {
+    display: none;
+  }
+
+  .hero-image-small-screen {
+    display: block;
+  }
+
+  .hero .hero-title-1 {
+    font-size: 1.2rem;
+  }
+
+  .hero .hero-title-2 {
+    font-size: 1.728rem;
+    line-height: 1.2;
+  }
+
+  .hero .hero-title-3 {
+    font-size: 1rem;
+  }
+}
+
+/* image hover link */
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    -webkit-transition: -webkit-filter 0.3s ease;
+    transition: -webkit-filter 0.3s ease;
+    -o-transition: filter 0.3s ease;
+    transition: filter 0.3s ease;
+    transition: filter 0.3s ease, -webkit-filter 0.3s ease;
+}
+
+/* initial state for the overlay text, hidden */
+.image-container .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    opacity: 0;
+    text-shadow: 0px 0px 15px black;
+    -webkit-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.image-container .overlay-text a {
+  text-decoration: none;
+}
+
+.image-container .overlay-text a:hover {
+  color: lightgray;
+}
+
+/* hover effect for the image */
+.image-container:hover img {
+    -webkit-filter: brightness(80%) grayscale(50%);
+            filter: brightness(80%) grayscale(50%);
+}
+
+/* hover effect for the overlay text */
+.image-container:hover .overlay-text {
+    opacity: 1;
+}
