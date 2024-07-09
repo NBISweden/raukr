@@ -81,7 +81,7 @@ All course materials from our previous workshops are open and accessible.
 
 ## About
 
-![](assets/images/visby-harbor.webp){fig-alt="An aerial view of a medieval harbor with fishing vessels"}
+![](assets/images/visby-wall.webp){fig-alt="An aerial view of a medieval harbor with fishing vessels"}
 
 RaukR summer school is run by the National Bioinformatics Infrastructure Sweden. [NBIS](https://nbis.se) is a platform of the Science for Life Laboratory ([SciLifeLab](https://www.scilifelab.se/)) and the Swedish node of [Elixir](https://elixir-europe.org/). This event is organised in co-operation with Campus Gotland, Uppsala University.
 
