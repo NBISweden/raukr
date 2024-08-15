@@ -24,6 +24,7 @@ website:
     left: "{{< meta current_year >}} NBIS | [GPL-3 License](https://choosealicense.com/licenses/gpl-3.0/)"
     right: "Published with [Quarto](https://quarto.org/) v{{< meta quarto_version >}}"
   site-url: "https://nbisweden.github.io/raukr/"
+  google-analytics: "G-7QQKJ21G0M"
 
 format:
   html:
