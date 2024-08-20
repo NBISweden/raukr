@@ -41,7 +41,7 @@ In Life Sciences and Bioinformatics, the R programming language is pivotal for d
 ## Workshops
 
 ::: {.callout-note}
-The next workshop is planned to run in June 2025. Registration opens in Jan-Feb 2025. 
+The next workshop is planned to run in June 2025. Registration opens in approximately Jan-Feb 2025. It will be listed on the [NBIS training catalogue](https://nbis.se/training/future) and [SciLifeLab Training Hub](https://training.scilifelab.se/events). 
 :::
 
 All course materials from our previous workshops are open and accessible.
