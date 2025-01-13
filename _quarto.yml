@@ -29,6 +29,12 @@ website:
     type: implied
     style: simple
     palette: light
+  announcement:
+    icon: info-circle
+    dismissable: true
+    content: "Registration is now open for the RaukR 2025."
+    type: primary
+    position: above-navbar
 
 format:
   html:
