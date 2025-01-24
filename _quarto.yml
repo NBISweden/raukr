@@ -6,7 +6,10 @@ project:
     - "*.md"
 
 website:
-  image: "assets/images/featured.jpg"
+  site-url: "https://nbisweden.github.io/raukr/"
+  open-graph: true
+  description: "A 2 week intensive workshop covering the R ecosystem including best coding practices, code profiling, data wrangling, quarto notebooks, shiny apps and more."
+  image: "assets/images/seo.webp"
   favicon: "assets/favicon.svg"
   search: false
   navbar:
@@ -23,7 +26,6 @@ website:
     border: false
     left: "{{< meta current_year >}} NBIS | [GPL-3 License](https://choosealicense.com/licenses/gpl-3.0/)"
     right: "Published with [Quarto](https://quarto.org/) v{{< meta quarto_version >}}"
-  site-url: "https://nbisweden.github.io/raukr/"
   google-analytics: "G-7QQKJ21G0M"
   cookie-consent:
     type: implied
@@ -49,7 +51,6 @@ format:
     callout-icon: true
     date:  last-modified
     date-format: "DD-MMM-YYYY"
-    image: "/assets/images/visby-typing.webp"
 
 filters:
   - assets/custom.lua
