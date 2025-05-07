@@ -41,9 +41,11 @@ In Life Sciences and Bioinformatics, the R programming language is pivotal for d
 
 ## Workshops
 
-All course materials from our previous workshops are open and accessible.
+RaukR runs this year from **June 09-19, 2025**.
 
 **[Raukr 2025](https://nbisweden.github.io/raukr-2025/)**
+
+All course materials from our previous workshops are open and accessible.
 
 **[Raukr 2024](https://nbisweden.github.io/raukr-2024/)**
 
