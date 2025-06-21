@@ -24,7 +24,7 @@ website:
         href: "index.html#about"
   page-footer:
     border: false
-    left: "{{< meta current_year >}} NBIS | [GPL-3 License](https://choosealicense.com/licenses/gpl-3.0/)"
+    left: "{{< meta current_year >}} NBIS • [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
     right: "Published with [Quarto](https://quarto.org/) v{{< meta quarto_version >}}"
   google-analytics: "G-7QQKJ21G0M"
   cookie-consent:
