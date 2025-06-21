@@ -6,3 +6,4 @@
 /.luarc.json
 **/*_cache/
 **/__pycache__
+docs
