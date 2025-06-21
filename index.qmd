@@ -43,7 +43,7 @@ In Life Sciences and Bioinformatics, the R programming language is pivotal for d
 
 ::: {.callout-note}
 
-The next RaukR Summer School will be held in June 2026. The application period will open in early 2026. Sign up to express interest and to be notified.  
+The next RaukR Summer School will be held in June 2026. The application opens in early 2026. Sign up to express interest and to be notified.  
 
 <div data-tf-live="01JY9F9HH8P1CB05DEQ52XGDCN"></div>  
 <script src="//embed.typeform.com/next/embed.js"></script>  
