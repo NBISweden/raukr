@@ -31,12 +31,12 @@ website:
     type: implied
     style: simple
     palette: light
-  # announcement:
-  #   icon: info-circle
-  #   dismissable: true
-  #   content: "Registration is now open for RaukR 2025."
-  #   type: primary
-  #   position: above-navbar
+  announcement:
+    icon: info-circle
+    dismissable: true
+    content: "Registration for RaukR 2026 is not yet open but you can sign up to express interest and to be notified."
+    type: primary
+    position: above-navbar
 
 format:
   html:

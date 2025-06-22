@@ -41,15 +41,6 @@ In Life Sciences and Bioinformatics, the R programming language is pivotal for d
 
 ## Workshops
 
-::: {.callout-note}
-
-The next RaukR Summer School will be held in June 2026. The application opens in early 2026. Sign up to express interest and to be notified.  
-
-<div data-tf-live="01JY9F9HH8P1CB05DEQ52XGDCN"></div>  
-<script src="//embed.typeform.com/next/embed.js"></script>  
-
-:::
-
 All course materials from our previous workshops are open and accessible.
 
 **[Raukr 2025](https://nbisweden.github.io/raukr-2025/)**
@@ -104,3 +95,5 @@ For queries, write to us at **raukr[at]nbis.se**.
 Updated: {{< meta current_date >}} at {{< meta current_time >}}.
 :::
 
+<div data-tf-live="01JY9F9HH8P1CB05DEQ52XGDCN"></div>  
+<script src="//embed.typeform.com/next/embed.js"></script>  
