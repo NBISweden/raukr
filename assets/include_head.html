@@ -1,3 +1,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Nunito:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+<!-- replace the text in cookie consent banner -->
+<script>
+  // Ensure the DOM is fully loaded before attempting to manipulate it
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find the paragraph element by its ID
+    var paragraph = document.getElementById('cc-nb-text');
+  
+    // Check if the element exists
+    if (paragraph) {
+      // Replace the text content of the paragraph
+      paragraph.textContent = 'Cookies are used to analyze web traffic and to understand where our visitors are coming from.';
+    } else {
+      console.error('Element with ID "cc-nb-text" not found.');
+    }
+  });
+</script>

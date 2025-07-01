@@ -155,3 +155,14 @@ body {
 .image-container:hover .overlay-text {
     opacity: 1;
 }
+
+/* cookie consent */
+.termsfeed-com---nb, 
+.termsfeed-com---reset,
+.termsfeed-com---pc-dialog .cc-cp-body-tabs {
+  font-family: inherit;
+}
+
+.termsfeed-com---nb .cc-nb-main-container {
+  padding: 2rem;
+}
