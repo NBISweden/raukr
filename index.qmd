@@ -43,41 +43,43 @@ In Life Sciences and Bioinformatics, the R programming language is pivotal for d
 
 All course materials from our previous workshops are open and accessible.
 
-**[Raukr 2025](https://nbisweden.github.io/raukr-2025/)**
+<!-- **[RaukR 2025](https://nbisweden.github.io/raukr-2025/)** -->
 
 ::: {.image-container}
 
 ![](assets/images/group-2025.webp){fig-alt="Group photo of teachers and participants with seastacks at Ljugarn"}
 
 ::: {.overlay-text}
-[[Raukr 2025 &#9656;](https://nbisweden.github.io/raukr-2025/)]{.large}
+[[RaukR 2025 &#9656;](https://nbisweden.github.io/raukr-2025/)]{.large}
 :::
 
 :::
 
-**[Raukr 2024](https://nbisweden.github.io/raukr-2024/)**
+:::: {.grid-container}
+::: {.grid-item .image-container}
 
-::: {.image-container}
-
+<!-- **[RaukR 2024](https://nbisweden.github.io/raukr-2024/)** -->
 ![](assets/images/group-2024.webp){fig-alt="Group photo of teachers and participants with seastacks at Ljugarn"}
 
 ::: {.overlay-text}
-[[Raukr 2024 &#9656;](https://nbisweden.github.io/raukr-2024/)]{.large}
+[[RaukR 2024 &#9656;](https://nbisweden.github.io/raukr-2024/)]{.large}
 :::
 
 :::
 
-**[Raukr 2023](https://nbisweden.github.io/raukr-2023/)**
 
-::: {.image-container}
 
+::: {.grid-item .image-container}
+
+<!-- **[RaukR 2023](https://nbisweden.github.io/raukr-2023/)** -->
 ![](assets/images/group-2023.webp){fig-alt="Group photo of teachers and participants with seastacks at Ljugarn"}
 
 ::: {.overlay-text}
-[[Raukr 2023 &#9656;](https://nbisweden.github.io/raukr-2023/)]{.large}
+[[RaukR 2023 &#9656;](https://nbisweden.github.io/raukr-2023/)]{.large}
 :::
 
 :::
+::::
 
 ## About
 
