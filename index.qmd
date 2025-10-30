@@ -98,5 +98,7 @@ Updated: {{< meta current_date >}} at {{< meta current_time >}}.
 :::
 
 <!-- typeform signup form -->
+<!--
 <div data-tf-live="01JY9F9HH8P1CB05DEQ52XGDCN"></div>  
 <script src="//embed.typeform.com/next/embed.js"></script>  
+-->
