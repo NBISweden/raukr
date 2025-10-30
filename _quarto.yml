@@ -34,7 +34,7 @@ website:
   announcement:
     icon: info-circle
     dismissable: true
-    content: "Registration for RaukR 2026 isn't open yet, but you can sign up to express interest and get notified."
+    content: "Registration for RaukR 2026 is now open. Apply [here](https://nbisweden.github.io/raukr-2026/home_registration.html)!"
     type: primary
     position: above-navbar
 
