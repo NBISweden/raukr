@@ -1,5 +1,5 @@
 ---
-pagetitle: "RaukR • Summer school • R Beyond the Basics"
+pagetitle: "RaukR • Summer school • Data Science with R"
 title: ""
 subtitle: ""
 description: ""
@@ -22,7 +22,7 @@ NBIS Summer School
 :::
 
 ::: {.hero-title-2}
-RaukR • R Beyond The Basics
+RaukR • Data Science with R
 :::
 
 ::: {.hero-title-3}

@@ -1,4 +1,4 @@
-# Raukr • R Beyond The Basics  
+# Raukr • Data Science with R  
 [![ci_badge](https://github.com/NBISweden/raukr/workflows/deploy/badge.svg)](https://github.com/NBISweden/raukr/actions?workflow=deploy)  [![linkcheck_badge](https://github.com/NBISweden/raukr/workflows/linkcheck/badge.svg)](https://github.com/NBISweden/raukr/actions?workflow=linkcheck)  
 
 **Landing page for RaukR NBIS workshop**
@@ -7,4 +7,4 @@
 
 ---
 
-2025 NBIS
+2026 NBIS
