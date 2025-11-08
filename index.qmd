@@ -1,5 +1,5 @@
 ---
-pagetitle: "RaukR • Summer school • Data Science with R"
+pagetitle: "RaukR • Summer school • Data Science With R"
 title: ""
 subtitle: ""
 description: ""
@@ -22,7 +22,7 @@ NBIS Summer School
 :::
 
 ::: {.hero-title-2}
-RaukR • Data Science with R
+RaukR • Data Science With R
 :::
 
 ::: {.hero-title-3}
@@ -40,7 +40,7 @@ Master the R programming ecosystem on our annual
 In Life Sciences and Bioinformatics, the R programming language is pivotal for data transformation, statistical analyses, and crafting publication-ready visualizations. This workshop goes beyond the basics, offering participants a comprehensive understanding of the R ecosystem. We explore best coding practices, code profiling, data wrangling, generating reports from notebooks and development of web apps using R.
 
 ::: {.alert .alert-primary .ants}
-::: {style="font-size:1.4em;margin-bottom:-0.2rem;"}
+::: {style="font-size:1.4em;margin-bottom:-0.5rem;"}
 Registration for **RaukR 2026** is now open.  
 Secure your spot today!  
 [[[**Apply now &#9656;**]{style="margin:5px;"}]{.btn .btn-primary .btn-lg style="margin-top:15px;"}](https://nbisweden.github.io/raukr-2026)
