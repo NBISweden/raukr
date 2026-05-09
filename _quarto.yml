@@ -40,10 +40,10 @@ website:
 
 format:
   html:
-    quarto-required: ">=1.4.5"
+    quarto-required: ">=1.8.25"
     include-in-header: "assets/include_head.html"
     include-before-body: "assets/include_body_before.html"
-    include_after_body: "assets/include_body_after.html"
+    include-after-body: "assets/include_body_after.html"
     theme: "assets/css/styles.scss"
     toc: false
     standalone: false
@@ -55,4 +55,4 @@ format:
 filters:
   - assets/custom.lua
   - fontawesome
-  - accordion
+
