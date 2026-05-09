@@ -31,12 +31,12 @@ website:
     type: implied
     style: simple
     palette: light
-  announcement:
-    icon: info-circle
-    dismissable: true
-    content: "Registration for RaukR 2026 is now open. Apply [now](https://nbisweden.github.io/raukr-2026)!"
-    type: primary
-    position: above-navbar
+  # announcement:
+  #   icon: info-circle
+  #   dismissable: true
+  #   content: "Registration for RaukR 2026 is now open. Apply [now](https://nbisweden.github.io/raukr-2026)!"
+  #   type: primary
+  #   position: above-navbar
 
 format:
   html:
