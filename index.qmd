@@ -41,7 +41,7 @@ In Life Sciences and Bioinformatics, the R programming language is pivotal for d
 
 ## Workshops
 
-[Upcoming workshop: [RaukR 2026](https://nbisweden.github.io/raukr-2026)]{.large}
+[Current workshop: [RaukR 2026](https://nbisweden.github.io/raukr-2026)]{.large}
 
 All course materials from our previous workshops are open and accessible.
 
