@@ -41,11 +41,17 @@ In Life Sciences and Bioinformatics, the R programming language is pivotal for d
 
 ## Workshops
 
-[Current workshop: [RaukR 2026](https://nbisweden.github.io/raukr-2026)]{.large}
-
 All course materials from our previous workshops are open and accessible.
 
-<!-- **[RaukR 2025](https://nbisweden.github.io/raukr-2025/)** -->
+::: {.image-container}
+
+![](assets/images/group-2026.webp){fig-alt="Group photo of teachers and participants at Hoburg"}
+
+::: {.overlay-text}
+[[RaukR 2026 &#9656;](https://nbisweden.github.io/raukr-2026/)]{.large}
+:::
+
+:::
 
 ::: {.image-container}
 
@@ -60,7 +66,6 @@ All course materials from our previous workshops are open and accessible.
 :::: {.grid-container}
 ::: {.grid-item .image-container}
 
-<!-- **[RaukR 2024](https://nbisweden.github.io/raukr-2024/)** -->
 ![](assets/images/group-2024.webp){fig-alt="Group photo of teachers and participants with seastacks at Ljugarn"}
 
 ::: {.overlay-text}
@@ -69,11 +74,8 @@ All course materials from our previous workshops are open and accessible.
 
 :::
 
-
-
 ::: {.grid-item .image-container}
 
-<!-- **[RaukR 2023](https://nbisweden.github.io/raukr-2023/)** -->
 ![](assets/images/group-2023.webp){fig-alt="Group photo of teachers and participants with seastacks at Ljugarn"}
 
 ::: {.overlay-text}
@@ -100,7 +102,5 @@ Updated: {{< meta current_date >}} at {{< meta current_time >}}.
 :::
 
 <!-- typeform signup form -->
-<!--
-<div data-tf-live="01JY9F9HH8P1CB05DEQ52XGDCN"></div>  
-<script src="//embed.typeform.com/next/embed.js"></script>  
--->
+<div data-tf-live="01M0HR2Q3RSK5NE817BR8BWV2X"></div>
+<script src="//embed.typeform.com/next/embed.js"></script>

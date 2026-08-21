@@ -31,12 +31,12 @@ website:
     type: implied
     style: simple
     palette: light
-  # announcement:
-  #   icon: info-circle
-  #   dismissable: true
-  #   content: "Registration for RaukR 2026 is now open. Apply [now](https://nbisweden.github.io/raukr-2026)!"
-  #   type: primary
-  #   position: above-navbar
+  announcement:
+    icon: info-circle
+    dismissable: true
+    content: "If you are interested in participating in RaukR 2027, sign up to express interest! You will be notified when registration opens. [[Go To Form {{< fa circle-chevron-right >}}]{.badge .btn-primary}](https://nbis.typeform.com/to/dHx6xuWn) "
+    type: primary
+    position: above-navbar
 
 format:
   html:
