@@ -1,123 +1,263 @@
 /* css style for landing page */
 
-/* css style for landing page */
-
-body {
-  background-image: url("../images/home-1.webp");
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-size: cover;
-  background-attachment: scroll;
-}
-
 .navbar {
   background-color: transparent !important;
 }
 
 .nav-footer {
   background-color: transparent !important;
-}
-
-/* hero */
-
-.hero {
   position: relative;
-  margin-top: 1em;
-  margin-bottom: 2em;
+  z-index: 1;
 }
 
-.hero p {
-  margin: 0;
+/* hero and home box geometry
+   The hero is pinned to the top of the page, behind the announcement and the navbar, with a fixed height. Quarto's header padding is removed on this page, so the page flow also starts
+   at the top and the box is simply pushed down to overlap the bottom of the hero. The overlap scales with the window width but is clamped to 10-30% of the hero height, so the box always sits on the hero whatever the window size and the header height. Everything after the box flows below it as usual. */
+
+:root {
+  --hero-height: 650px; /* from the top of the page to the bottom of the hero */
+  --hero-overlap: clamp(calc(var(--hero-height) * 0.1), 8vw + 2rem, calc(var(--hero-height) * 0.1));
 }
 
-.hero-inner {
-  color: #D1E5E6;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  padding: 2em;
-  text-shadow: 0 0 6px gray;
+/* the fixed header overlays the hero, so drop the padding quarto-nav.js sets inline for it Quarto's min-height for the content assumes that padding, so instead the page is at least the window height and the content takes up the space left, which keeps the footer at the bottom */
+body {
+  padding-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
-.hero .hero-title-1 {
-  font-size: 1.44rem;
-  font-weight: 600;
+#quarto-content {
+  flex: 1 0 auto;
+}
+
+/* no extra space above the hero (Quarto adds a margin, and a padding on wide screens only) */
+#quarto-content > main.content {
   margin-top: 0;
-  margin-bottom: 0.25em;
-} 
-
-.hero .hero-title-2 {
-  font-size: 2.074rem;
-  font-weight: 600;
-  margin: 0;
+  padding-top: 0;
 }
 
-.hero .hero-title-3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 0.3em;
-  margin-bottom: 0;
-  line-height: 1.4;
-}
-
-.hero-image-small-screen {
+/* the empty title block would add a line of space */
+#title-block-header {
   display: none;
 }
 
-@media only screen and (max-width: 769px) {
-  .hero {
-    position: unset;
+/* home page content box */
+
+.home-container {
+  max-width: 1200px;
+  margin-inline: auto;
+  margin-top: calc(var(--hero-height) - var(--hero-overlap));
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.home-inner {
+  background-color: #eaf2f3;
+  padding: 1em 4em;
+  box-shadow: var(--shadow-medium);
+  background-image: url('../images/binary.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: auto;
+  position: relative;
+}
+
+/* separate box floating a fixed distance above the home box */
+.home-float {
+  position: absolute;
+  bottom: calc(100% + 1rem);
+  left: 4em;
+  background-color: #eaf2f3;
+  padding: 0.8em 1em;
+  box-shadow: var(--shadow-medium);
+}
+
+.home-float h3 {
+  margin: 0;
+  color: inherit;
+}
+
+/* narrower sides on small screens, the top and bottom stay as above */
+@media only screen and (max-width: 576px) {
+  .home-inner {
+    padding: 0.5em 1em;
   }
 
-  .hero-inner {
-    color: #1c2833;
-    position: unset;
-    padding: 0;
-    text-shadow: none;
-    -webkit-transform: none;
-        -ms-transform: none;
-            transform: none;
-  }
-
-  .hero-image {
-    display: none;
-  }
-
-  .hero-image-small-screen {
-    display: block;
-  }
-
-  .hero .hero-title-1 {
-    font-size: 1.2rem;
-  }
-
-  .hero .hero-title-2 {
-    font-size: 1.728rem;
-    line-height: 1.2;
-  }
-
-  .hero .hero-title-3 {
-    font-size: 1rem;
+  .home-float {
+    left: 1em;
   }
 }
 
-/* image hover link */
+/* hero slideshow */
 
-.image-container {
-    position: relative;
-    display: inline-block;
+/* out of the page flow, from the top of the page to --hero-height */
+.hero-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--hero-height);
+  z-index: -5;
 }
+
+.hero-gallery {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-gallery .child {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  pointer-events: none;
+}
+
+.hero-gallery .child.active {
+  opacity: 1;
+}
+
+.hero-gallery img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+/* pale veil behind the header */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#bad4d7 5%, transparent 30%);
+  z-index: 1;
+}
+
+.image-effect img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: grayscale(100%) brightness(1.2);
+          filter: grayscale(100%) brightness(1.2);
+}
+
+/* teal overlay using pseudo-element */
+.image-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4c979e;
+  opacity: 0.35;
+  pointer-events: none; /* so it doesn't block interactions */
+}
+
+/* particles */
+#quarto-particlejs{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  aspect-ratio: 1684/842;
+}
+
+/* images, teal by default and in colour on hover, see .profile-effect in styles.scss */
+
+.profile-effect {
+  vertical-align: top; /* no baseline gap under the image */
+  margin-bottom: 1rem; /* .profile-effect removes the paragraph margin */
+}
+
+/* year logo at the top left of a group photo
+   The teal tint is the same 35% overlay as .profile-overlay, cut to the hexagon with a mask so the
+   transparent corners stay clear. Hovering the photo colours the logo (see .profile-effect in
+   styles.scss), hovering the logo itself also lifts it. The mask URLs are relative to this file. */
+
+.logo-2023 { --logo: url('../logos/2023.webp'); }
+.logo-2024 { --logo: url('../logos/2024.webp'); }
+.logo-2025 { --logo: url('../logos/2025.webp'); }
+.logo-2026 { --logo: url('../logos/2026.webp'); }
+
+.group-logo {
+  --logo-height: 120px;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  /* the same three drop-shadow()s in both states, so the filter can transition */
+  -webkit-filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 0 rgba(76, 151, 158, 0)) drop-shadow(0 0 0 rgba(76, 151, 158, 0));
+          filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 0 rgba(76, 151, 158, 0)) drop-shadow(0 0 0 rgba(76, 151, 158, 0));
+  -webkit-transition: -webkit-transform 0.3s ease, -webkit-filter 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-container .group-logo img {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: var(--logo-height);
+  -webkit-transition: -webkit-filter 0.5s ease;
+  transition: filter 0.5s ease;
+}
+
+.group-logo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #4c979e;
+  opacity: 0.35;
+  -webkit-mask-image: var(--logo);
+          mask-image: var(--logo);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.profile-effect:hover .group-logo::after {
+  opacity: 0;
+}
+
+/* lift: scale, tilt, and a teal glow behind the logo, tight and wide layers */
+.group-logo:hover {
+  -webkit-transform: scale(1.12) rotate(-8deg);
+      -ms-transform: scale(1.12) rotate(-8deg);
+          transform: scale(1.12) rotate(-8deg);
+  -webkit-filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 4px rgba(76, 151, 158, 0.9)) drop-shadow(0 0 15px rgba(76, 151, 158, 0.95));
+          filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 4px rgba(76, 151, 158, 0.9)) drop-shadow(0 0 15px rgba(76, 151, 158, 0.95));
+}
+
+@media only screen and (max-width: 576px) {
+  .group-logo {
+    --logo-height: 90px;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+}
+
+/* image with a link that appears on hover */
 
 .image-container img {
     display: block;
     width: 100%;
-    -webkit-transition: -webkit-filter 0.3s ease;
-    transition: -webkit-filter 0.3s ease;
-    -o-transition: filter 0.3s ease;
-    transition: filter 0.3s ease;
-    transition: filter 0.3s ease, -webkit-filter 0.3s ease;
 }
 
 /* initial state for the overlay text, hidden */
@@ -131,7 +271,7 @@ body {
     color: white;
     font-size: clamp(0.9em, 2vw, 1.3em);
     opacity: 0;
-    text-shadow: 0px 0px 15px black;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.8), 0 0 15px black;
     -webkit-transition: opacity 0.3s ease;
     -o-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
@@ -139,17 +279,12 @@ body {
 }
 
 .image-container .overlay-text a {
+  color: white;
   text-decoration: none;
 }
 
 .image-container .overlay-text a:hover {
   color: lightgray;
-}
-
-/* hover effect for the image */
-.image-container:hover img {
-    -webkit-filter: brightness(80%) grayscale(50%);
-            filter: brightness(80%) grayscale(50%);
 }
 
 /* hover effect for the overlay text */
@@ -158,7 +293,7 @@ body {
 }
 
 /* cookie consent */
-.termsfeed-com---nb, 
+.termsfeed-com---nb,
 .termsfeed-com---reset,
 .termsfeed-com---pc-dialog .cc-cp-body-tabs {
   font-family: inherit;
@@ -180,47 +315,4 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
   }
-}
-
-/* marching ants */
-.ants {
-    --border-color: rgb(183.4, 213.4, 216.6);
-    background-size: 
-      20px 2px, 
-      20px 2px, 
-      2px 20px, 
-      2px 20px;
-    background-position: 
-      0 0, 
-      0 100%, 
-      0 0, 
-      100% 0;
-    background-repeat: 
-      repeat-x, 
-      repeat-x, 
-      repeat-y, 
-      repeat-y;
-    background-image: 
-      linear-gradient(to right, var(--border-color) 50%, transparent 50%), 
-      linear-gradient(to right, var(--border-color) 50%, transparent 50%), 
-      linear-gradient(to bottom, var(--border-color) 50%, transparent 50%), 
-      linear-gradient(to bottom, var(--border-color) 50%, transparent 50%);
-    animation: marching-ants 1s linear infinite;
-}
-
-@keyframes marching-ants {
-    0% {
-      background-position: 
-        0 0, 
-        0 100%, 
-        0 0, 
-        100% 0;
-    } 
-    100% {
-      background-position: 
-        40px 0, 
-        -40px 100%, 
-        0 -40px, 
-        100% 40px;
-    }
 }

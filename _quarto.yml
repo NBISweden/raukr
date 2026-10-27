@@ -13,7 +13,7 @@ website:
   favicon: "assets/favicon.svg"
   search: false
   navbar:
-    logo: "assets/logos/raukr.png"
+    logo: "assets/logos/logo.png"
     logo-alt: "RaukR"
     right:
       - text: "Home"
@@ -34,7 +34,7 @@ website:
   announcement:
     icon: info-circle
     dismissable: true
-    content: "If you are interested in participating in RaukR 2027, sign up to express interest! You will be notified when registration opens. [[Go To Form {{< fa circle-chevron-right >}}]{.badge .btn-primary}](https://nbis.typeform.com/to/dHx6xuWn) "
+    content: "If you are interested in participating in RaukR 2027, sign up to express interest! You will be notified when registration opens. Go to [[{{< fa clipboard-list >}} Form]{.badge .btn-primary}](https://nbis.typeform.com/to/dHx6xuWn) "
     type: primary
     position: above-navbar
 
@@ -49,7 +49,7 @@ format:
     standalone: false
     fig-align: left
     callout-icon: true
-    date:  last-modified
+    date: last-modified
     date-format: "DD-MMM-YYYY"
 
 filters:

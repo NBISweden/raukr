@@ -1,23 +1,22 @@
-/* custom css style */
+/* website css style */
 
 /*-- scss:defaults --*/
 
 /* colours, fonts, size ---------------------------------------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Nunito:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
-/*@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url("https://use.typekit.net/kqq7gwf.css");*/
-
-$primary: #4C979F;
+$primary: #4C979F; /* brand colour, for fills and decoration */
+$primary-dark: #37757D; /* fills that carry light text: buttons, badges, step numbers (4.8:1 with whitesmoke) */
 $secondary: #A6CBCF;
 $tertiary: #D1E5E6;
-$link-color: #79B1B7;
+$accent: #CF6A45; /* warm accent, used sparingly: venue marker, extra sessions, caution callouts */
+$link-color: #2F6F77; /* 5.4:1 on the page background */
 $body-color: #1c2833;
 $code-color: #496985;
 $code-block-bg: WhiteSmoke;
-$font-family-sans-serif: 'Nunito', 'Source Sans Pro', 'Helvetica', 'sans-serif';
-$font-family-monospace: 'Fira Mono','Ubuntu Mono', 'Lucida Console', 'Courier', 'monospace';
-$font-family-headings: $font-family-sans-serif;
+$font-family-sans-serif: 'Albert Sans', 'Helvetica', sans-serif;
+$font-family-monospace: 'Fira Mono','Ubuntu Mono', 'Lucida Console', 'Courier', monospace;
+$headings-font-family: $font-family-sans-serif;
+$mermaid-font-family: 'Albert Sans', 'Helvetica', sans-serif;
 $font-size-root: 18px;
 $code-font-size: 14px;
 /* major second scale */
@@ -28,19 +27,37 @@ $h4-font-size: 1.266rem;
 $h5-font-size: 1.125rem;
 $h6-font-size: 1rem;
 $code-block-border-color: none;
-$code-font-size: 0.90rem;
 $code-bg: $code-block-bg; /* inline code */
 /*$code-color: ; */
 
+/* callout colours, muted to sit with the teal palette */
+$callout-color-note: $primary;
+$callout-color-tip: #6B9F7F;
+$callout-color-important: #B5495B;
+$callout-color-caution: $accent;
+$callout-color-warning: #D4A02F;
+
+/* shadow strengths */
+$shadow-low: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+$shadow-medium: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+$shadow-high: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+$shadow-higher: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+$shadow-highest: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
 /* site */
 $navbar-bg: $tertiary;
-$footer-bg: white;
+$footer-bg: transparent;
 $footer-fg: DimGray;
 
 /*-- scss:rules --*/
 
+/* shadow tokens for plain css files */
+:root {
+  --shadow-medium: #{$shadow-medium};
+}
+
 h1,h2,h3,h4,h5,h6 {
-  font-family: $font-family-headings;
+  font-family: $headings-font-family;
 }
 
 /* major third scale */
@@ -51,11 +68,23 @@ h1,h2,h3,h4,h5,h6 {
 .smaller { font-size: 0.64em;}
 .smallest { font-size: 0.512em;}
 
-
 /* site ---------------------------------------------------------------------- */
+
+body {
+  background-color: #f5f9f9;
+  background-image: radial-gradient($secondary 0.65px, #fafcfc 0.65px);
+  background-size: 13px 13px;
+}
+
+/* navbar  and footer */
 
 .navbar-brand {
   padding-top: 0;
+}
+
+.navbar-title {
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .navbar-nav {
@@ -63,56 +92,186 @@ h1,h2,h3,h4,h5,h6 {
   letter-spacing: 0.1em;
 }
 
+.nav-footer {
+  background-color: $footer-bg;
+  color: $footer-fg;
+}
+
 .nav-footer p {
   margin-bottom: 0;
 }
 
-.contents-table table {
-  line-height: 1;
+/* listing */
+
+.quarto-listing .card {
+  border-radius: 0;
 }
 
-.listing-image img {
-  height: 40px;
-  width: 60px;
-  -o-object-fit: cover;
-  object-fit: cover;
+.quarto-listing img {
+  border-radius: 0;
 }
 
-/* buttons and badges */
+/* table */
 
-.badge,
-.badge-primary {
-  background-color: $primary;
+table th,
+table td {
+  vertical-align: middle;
 }
 
-.badge-secondary {
-  background-color: $secondary;
+table, .Reactable {
+  font-size: 0.85em;
 }
 
+/* buttons */
+
+.btn,
 .btn-primary {
-  background-color: $primary;
-  color: whitesmoke;
-}
-
-.btn-primary:hover {
-  background-color: $secondary;
-  color: whitesmoke;
-
+  --bs-btn-color: whitesmoke;
+  --bs-btn-bg: #{$primary-dark};
+  --bs-btn-border-color: #{$primary-dark};
+  --bs-btn-hover-color: whitesmoke;
+  --bs-btn-hover-bg: #{darken($primary-dark, 5%)};
+  --bs-btn-hover-border-color: #{darken($primary-dark, 5%)};
+  --bs-btn-active-color: whitesmoke;
+  --bs-btn-active-bg: #{darken($primary-dark, 10%)};
+  --bs-btn-active-border-color: #{darken($primary-dark, 10%)};
+  --bs-btn-disabled-color: whitesmoke;
+  --bs-btn-disabled-bg: #{$primary-dark};
+  --bs-btn-disabled-border-color: #{$primary-dark};
+  border-radius: 0;
 }
 
 .btn-secondary {
-  background-color: $secondary;
-  color: whitesmoke;
+  --bs-btn-color: #{$body-color};
+  --bs-btn-bg: #{$secondary};
+  --bs-btn-border-color: #{$secondary};
+  --bs-btn-hover-color: #{$body-color};
+  --bs-btn-hover-bg: #{darken($secondary, 5%)};
+  --bs-btn-hover-border-color: #{darken($secondary, 5%)};
+  --bs-btn-active-color: #{$body-color};
+  --bs-btn-active-bg: #{darken($secondary, 10%)};
+  --bs-btn-active-border-color: #{darken($secondary, 10%)};
+  --bs-btn-disabled-color: #{$body-color};
+  --bs-btn-disabled-bg: #{$secondary};
+  --bs-btn-disabled-border-color: #{$secondary};
 }
 
-.btn-secondary:hover {
-  background-color: $tertiary;
-  color: whitesmoke;
+.btn-tertiary {
+  --bs-btn-color: #{$body-color};
+  --bs-btn-bg: #{$tertiary};
+  --bs-btn-border-color: #{$tertiary};
+  --bs-btn-hover-color: #{$body-color};
+  --bs-btn-hover-bg: #{darken($tertiary, 5%)};
+  --bs-btn-hover-border-color: #{darken($tertiary, 5%)};
+  --bs-btn-active-color: #{$body-color};
+  --bs-btn-active-bg: #{darken($tertiary, 10%)};
+  --bs-btn-active-border-color: #{darken($tertiary, 10%)};
+  --bs-btn-disabled-color: #{$body-color};
+  --bs-btn-disabled-bg: #{$tertiary};
+  --bs-btn-disabled-border-color: #{$tertiary};
 }
 
 .btn a {
   color: whitesmoke;
   text-decoration: none;
+}
+
+.btn-secondary a, .btn-secondary a:hover,
+.btn-tertiary a, .btn-tertiary a:hover {
+  color: $body-color;
+}
+
+/* badges */
+
+.badge,
+.badge.badge-primary {
+  background-color: $primary-dark;
+  color: whitesmoke;
+  font-weight: normal;
+  border-radius: 0;
+}
+
+.badge.badge-secondary {
+  background-color: $secondary;
+  color: $body-color;
+}
+
+.badge.badge-tertiary {
+  background-color: $tertiary;
+  color: $body-color;
+}
+
+/* announcement badge, square corners regardless of cascade order */
+
+#quarto-announcement .badge {
+  border-radius: 0;
+}
+
+.badge a,
+.badge a:hover {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.badge.badge-secondary a,
+.badge.badge-secondary a:hover,
+.badge.badge-tertiary a,
+.badge.badge-tertiary a:hover {
+  color: $body-color;
+}
+
+/* observablehq */
+
+.observablehq .btn {
+  @extend .btn-sm;
+  border-radius: 0;
+}
+
+.observablehq select {
+  @extend .form-select;
+  border-radius: 0;
+}
+
+.observablehq input:not([type]),
+.observablehq input[type="text"],
+.observablehq input[type="email"],
+.observablehq input[type="password"],
+.observablehq input[type="search"],
+.observablehq input[type="tel"],
+.observablehq input[type="url"],
+.observablehq input[type="number"],
+.observablehq input[type="file"],
+.observablehq input[type="date"],
+.observablehq input[type="datetime-local"],
+.observablehq input[type="month"],
+.observablehq input[type="time"],
+.observablehq input[type="week"],
+.observablehq textarea {
+  @extend .form-control;
+  border-radius: 0;
+}
+
+.observablehq input[type="button"],
+.observablehq input[type="submit"],
+.observablehq input[type="reset"] {
+  @extend .btn;
+  border-radius: 0;
+}
+
+.observablehq input[type="checkbox"],
+.observablehq input[type="radio"] {
+  @extend .form-check-input;
+  border-radius: 0;
+}
+
+.observablehq input[type="range"] {
+  @extend .form-range;
+  border-radius: 0;
+}
+
+.observablehq input[type="color"] {
+  @extend .form-control-color;
+  border-radius: 0;
 }
 
 /* alert */
@@ -121,20 +280,20 @@ h1,h2,h3,h4,h5,h6 {
   border-radius: 0;
 }
 
-.quarto-title-block .quarto-title-banner {
-  background-position: right;
-}
-
 /* code */
 
 pre {
   line-height: 1.4;
   background-color: $code-block-bg;
-  border-radius: 0.25rem;
+  border-radius: 0;
 }
 
 pre:not(.sourceCode), pre:not([class]) {
   padding: 0.4em;
+}
+
+div.code-with-filename .code-with-filename-file {
+  border-radius: 0;
 }
 
 div.code-with-filename-file pre {
@@ -144,21 +303,74 @@ div.code-with-filename-file pre {
 
 code {
   color: $code-color;
+  border-radius: 0;
+}
+
+div.sourceCode {
+  border-radius: 0;
+}
+
+.cell-output-stdout code {
+  word-break: break-word !important;
+  white-space: pre-wrap !important;
+}
+
+/* tab content */
+
+.tab-content {
+  background-color: $body-bg;
+}
+
+/* panel tabset: underlined tabs, tertiary active tab, lightly outlined panel */
+
+.panel-tabset > .nav-tabs {
+  --bs-nav-tabs-border-color: #{rgba($primary, 0.35)};
+  --bs-nav-tabs-border-radius: 0;
+  --bs-nav-tabs-link-hover-border-color: transparent transparent #{$secondary};
+  --bs-nav-tabs-link-active-color: #{$body-color};
+  --bs-nav-tabs-link-active-bg: #{$tertiary};
+  --bs-nav-tabs-link-active-border-color: transparent transparent #{$primary};
+}
+
+.panel-tabset > .nav-tabs .nav-link {
+  border-bottom-width: 2px;
+}
+
+.panel-tabset > .tab-content {
+  padding: 1rem 1.25rem 0.25rem;
+  border: 1px solid rgba($primary, 0.35);
+  border-top: 0;
 }
 
 /* call-out */
 
 .callout {
   border-radius: 0 !important;
+  background-color: $body-bg;
 }
 
+/* thin neutral outline and a thicker left accent, the accent colour comes from $callout-color-* */
 .callout-style-default,
 .callout-style-simple {
-  border: solid silver 1px !important;
+  border-top: solid silver 1px !important;
+  border-right: solid silver 1px !important;
+  border-bottom: solid silver 1px !important;
+  border-left-width: 4px !important;
 }
 
-div.callout-note.callout-style-default > .callout-header {
-  background-color: $secondary;
+/* header tinted with the callout colour */
+$callout-types: (
+  "note": $callout-color-note,
+  "tip": $callout-color-tip,
+  "important": $callout-color-important,
+  "caution": $callout-color-caution,
+  "warning": $callout-color-warning
+);
+
+@each $type, $color in $callout-types {
+  div.callout-#{$type}.callout-style-default > .callout-header {
+    background-color: mix($color, $body-bg, 20%);
+  }
 }
 
 div.callout-note .callout-icon::before {
@@ -210,6 +422,13 @@ div.callout-important .callout-icon::before {
   display: -ms-grid;
   display: grid;
   gap: 1em;
+}
+
+.profile-guest {
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+}
+
+.profile-about {
   grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
 }
 
@@ -218,35 +437,129 @@ div.callout-important .callout-icon::before {
 }
 
 .profile-child img {
-  height: 150px;
-  width: 150px;
-  -o-object-fit: cover;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-/* guest */
-
-.guest-parent {
-  display: -ms-grid;
-  display: grid;
-  gap: 1em;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.guest-child {
-  text-align: center;
-}
-
-.guest-child img {
   height: 250px;
   width: 250px;
   -o-object-fit: cover;
   object-fit: cover;
-  border-radius: 50%;
 }
 
-/* gallery */
+.profile-about img {
+  height: 150px;
+  width: 150px;
+}
+
+.profile-effect {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
+.profile-effect img {
+  -webkit-filter: grayscale(100%) brightness(1.2);
+          filter: grayscale(100%) brightness(1.2);
+          display: block;
+}
+
+.profile-effect p {
+  margin: 0;
+  padding: 0;
+}
+
+/* teal overlay using pseudo-element */
+.profile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4c979e;
+  opacity: 0.35;
+  transition: opacity 0.5s ease;
+}
+
+/* disable overlay and filter on hover */
+.profile-effect:hover  .profile-overlay{
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.profile-effect:hover img {
+  -webkit-filter: none;
+          filter: none;
+  transition: -webkit-filter 0.5s ease;
+  transition: filter 0.5s ease;
+  transition: filter 0.5s ease, -webkit-filter 0.5s ease;
+}
+
+/* push-down hover: the shadow flattens, as if the element is pressed into the page */
+
+.btn,
+.quarto-listing .card,
+.profile-effect,
+.raukr-gallery-child img,
+img.raukr-gallery-lead,
+.toastui-nav .toastui-nav-btn {
+  box-shadow: $shadow-medium;
+  transition: box-shadow 0.15s ease, color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover,
+.quarto-listing .card:hover,
+.profile-effect:hover,
+.raukr-gallery-child img:hover,
+img.raukr-gallery-lead:hover,
+.toastui-nav .toastui-nav-btn:hover {
+  box-shadow: $shadow-low;
+}
+
+/* schedule toolbar buttons, same look as .btn */
+
+.toastui-nav .toastui-nav-btn {
+  padding: 0.375rem 0.75rem;
+  color: $body-color;
+  background-color: $tertiary;
+  border: 1px solid $tertiary;
+  border-radius: 0;
+}
+
+.toastui-nav .toastui-nav-btn:hover {
+  background-color: darken($tertiary, 5%);
+  border-color: darken($tertiary, 5%);
+}
+
+.toastui-nav .toastui-nav-btn.active {
+  color: whitesmoke;
+  background-color: $primary-dark;
+  border-color: $primary-dark;
+}
+
+.toastui-nav .toastui-nav-btn.active:hover {
+  background-color: darken($primary-dark, 5%);
+  border-color: darken($primary-dark, 5%);
+}
+
+/* accordion */
+
+.accordion {
+  --bs-accordion-border-radius: 0;
+  --bs-accordion-inner-border-radius: 0;
+}
+
+/* blockquote */
+
+blockquote {
+  margin: 1.25rem 0;
+  padding: 0.75rem 1.25rem;
+  color: $body-color;
+  background-color: mix($tertiary, $body-bg, 40%);
+  border-left: 4px solid $primary;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* image gallery */
 
 .raukr-gallery-parent {
   display: -ms-grid;
@@ -270,37 +583,21 @@ div.callout-important .callout-icon::before {
   margin-bottom: 0;
 }
 
-/* schedule toastui */
-
-.schedule .cell-output-display {
-  height: 700px;
-  overflow: hidden;
-}
-
-.toastui-calendar-week-view .toastui-calendar-panel:not(.toastui-calendar-time) {
-  overflow-y: hidden !important;  
-}
-
-.toastui-calendar-time {
-  height: 610px !important;
-}
-
-.toastui-calendar-timegrid {
-  height: 600px !important;
-  min-height: 600px !important;
-}
-
-.toastui-calendar-event-time .toastui-calendar-event-time-content, .toastui-calendar-event-time .toastui-calendar-travel-time, .toastui-calendar-day-name__name {
-  font-size: 13px !important;
-}
-
-.toastui-calendar-section-button,
-.toastui-calendar-popup-section > .toastui-calendar-detail-item:nth-child(1),
-.toastui-calendar-popup-section > .toastui-calendar-detail-item:nth-child(2) {
-  display: none;
-}
-
+/* typeform signup form */
 .tf-v1-sidetab .tf-v1-sidetab-button-text {
   font-family: $font-family-sans-serif;
   font-weight: 600;
+}
+
+/* side tab button: square corners and the site shadow, like .btn.
+   Typeform adds its own stylesheet later with a single class selector, so the extra
+   .tf-v1-sidetab here is what makes these win. */
+.tf-v1-sidetab .tf-v1-sidetab-button {
+  border-radius: 0;
+  box-shadow: $shadow-medium;
+  transition: box-shadow 0.15s ease;
+}
+
+.tf-v1-sidetab .tf-v1-sidetab-button:hover {
+  box-shadow: $shadow-low;
 }

@@ -9,43 +9,54 @@ image: "assets/images/seo.webp"
 format:
   html:
     css: "assets/css/home.css"
+    anchor-sections: false
+hero-gallery:
+  images: assets/images/hero/
+resources:
+  - assets/images/binary.svg
+filters:
+  - assets/hero-gallery.lua
 ---
 
-::: {.hero .column-page}
+::: {.home-container .column-page}
+::: {.home-inner}
 
-![](assets/images/panorama.webp){.hero-image fig-alt="Hands coding at a laptop with the view of a medieval city"}
-
-::: {.hero-inner}
-
-::: {.hero-title-1}
-NBIS Summer School
+::: {.home-float}
+### NBIS Summer School
 :::
 
-::: {.hero-title-2}
-RaukR • Data Science With R
-:::
-
-::: {.hero-title-3}
-Master the R programming ecosystem on our annual  
-2 week summer school in Visby, Gotland, Sweden
-:::
-
-:::
-:::
-
-::: {.hero-image-small-screen}
-![](assets/images/visby-typing.webp)
+## [RaukR • Data Science With R]{.large}
+::: {style="margin-bottom:1em;"}
+#### Master the R programming ecosystem on our annual 2 week summer school in Visby, Gotland, Sweden
 :::
 
 In Life Sciences and Bioinformatics, the R programming language is pivotal for data transformation, statistical analyses, and crafting publication-ready visualizations. This workshop goes beyond the basics, offering participants a comprehensive understanding of the R ecosystem. We explore best coding practices, code profiling, data wrangling, generating reports from notebooks and development of web apps using R.
+
+:::
+:::
+
+{{< particles
+  id="quarto-particlejs"
+  particles.color.value="#a6cbcf"
+  particles.line_linked.color="#a6cbcf"
+  interactivity.events.onhover.enable=true
+  interactivity.events.onhover.mode=repulse
+>}}
 
 ## Workshops
 
 All course materials from our previous workshops are open and accessible.
 
-::: {.image-container}
+::: {.image-container .profile-effect}
 
 ![](assets/images/group-2026.webp){fig-alt="Group photo of teachers and participants at Hoburg"}
+
+::: {.profile-overlay}
+:::
+
+::: {.group-logo .logo-2026}
+![](assets/logos/2026.webp){fig-alt="RaukR 2026 logo"}
+:::
 
 ::: {.overlay-text}
 [[RaukR 2026 &#9656;](https://nbisweden.github.io/raukr-2026/)]{.large}
@@ -53,9 +64,16 @@ All course materials from our previous workshops are open and accessible.
 
 :::
 
-::: {.image-container}
+::: {.image-container .profile-effect}
 
 ![](assets/images/group-2025.webp){fig-alt="Group photo of teachers and participants with seastacks at Ljugarn"}
+
+::: {.profile-overlay}
+:::
+
+::: {.group-logo .logo-2025}
+![](assets/logos/2025.webp){fig-alt="RaukR 2025 logo"}
+:::
 
 ::: {.overlay-text}
 [[RaukR 2025 &#9656;](https://nbisweden.github.io/raukr-2025/)]{.large}
@@ -63,10 +81,16 @@ All course materials from our previous workshops are open and accessible.
 
 :::
 
-:::: {.grid-container}
-::: {.grid-item .image-container}
+::: {.image-container .profile-effect}
 
 ![](assets/images/group-2024.webp){fig-alt="Group photo of teachers and participants with seastacks at Ljugarn"}
+
+::: {.profile-overlay}
+:::
+
+::: {.group-logo .logo-2024}
+![](assets/logos/2024.webp){fig-alt="RaukR 2024 logo"}
+:::
 
 ::: {.overlay-text}
 [[RaukR 2024 &#9656;](https://nbisweden.github.io/raukr-2024/)]{.large}
@@ -74,26 +98,39 @@ All course materials from our previous workshops are open and accessible.
 
 :::
 
-::: {.grid-item .image-container}
+::: {.image-container .profile-effect}
 
 ![](assets/images/group-2023.webp){fig-alt="Group photo of teachers and participants with seastacks at Ljugarn"}
+
+::: {.profile-overlay}
+:::
+
+::: {.group-logo .logo-2023}
+![](assets/logos/2023.webp){fig-alt="RaukR 2023 logo"}
+:::
 
 ::: {.overlay-text}
 [[RaukR 2023 &#9656;](https://nbisweden.github.io/raukr-2023/)]{.large}
 :::
 
 :::
-::::
 
 ## About
 
+::: {.profile-effect}
+
 ![](assets/images/visby-wall.webp){fig-alt="An aerial view of a medieval harbor with fishing vessels"}
+
+::: {.profile-overlay}
+:::
+
+:::
 
 RaukR summer school is run by the National Bioinformatics Infrastructure Sweden. [NBIS](https://nbis.se) is a platform of the Science for Life Laboratory ([SciLifeLab](https://www.scilifelab.se/)) and the Swedish node of [Elixir](https://elixir-europe.org/). This event is organised in co-operation with Campus Gotland, Uppsala University.
 
-For queries, write to us at **raukr[at]nbis.se**.  
+For queries, write to us at **raukr[at]nbis.se**.
 
-![](assets/logos/raukr.svg){height="1.2em" style="margin-bottom:-3px;"} &nbsp; ![](assets/logos/nbis-scilifelab.svg){height="1.1em"} &nbsp; [{{< fa brands instagram >}}](https://www.instagram.com/raukr_nbis/) &nbsp; [{{< fa brands bluesky >}}](https://bsky.app/profile/nbis.se) &nbsp; [{{< fa brands linkedin >}}](https://www.linkedin.com/company/nbisweden)  
+![](assets/logos/logo.svg){height="1.2em" style="margin-bottom:-3px;"} &nbsp; ![](assets/logos/nbis-scilifelab.svg){height="1.1em"} &nbsp; [{{< fa brands instagram >}}](https://www.instagram.com/raukr_nbis/) &nbsp; [{{< fa brands bluesky >}}](https://bsky.app/profile/nbis.se) &nbsp; [{{< fa brands linkedin >}}](https://www.linkedin.com/company/nbisweden)
 
 ---
 
